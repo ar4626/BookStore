@@ -18,4 +18,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Common_Layer\Common_Layer.csproj" />
+  </ItemGroup>
+
 </Project>

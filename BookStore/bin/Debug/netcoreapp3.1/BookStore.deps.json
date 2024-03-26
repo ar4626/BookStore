@@ -1110,8 +1110,17 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "Common_Layer/1.0.0": {
+        "runtime": {
+          "Common_Layer.dll": {}
+        },
+        "compile": {
+          "Common_Layer.dll": {}
+        }
+      },
       "Repository_Layer/1.0.0": {
         "dependencies": {
+          "Common_Layer": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.0",
           "Microsoft.EntityFrameworkCore.Relational": "3.1.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.0"
@@ -3438,6 +3447,11 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Common_Layer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Repository_Layer/1.0.0": {
       "type": "project",
