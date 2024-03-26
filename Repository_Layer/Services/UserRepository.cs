@@ -26,7 +26,7 @@ namespace Repository_Layer.Services
                 entity.FName = model.FName;
                 entity.Lname = model.Lname;
                 entity.Email = model.Email;
-                entity.Password = model.Password;
+                entity.Password = BCrypt.Net.BCrypt.HashPassword(model.Password);
                 entity.Mobile = model.Mobile;
                 entity.CreatedAt = DateTime.Now;
                 entity.UpdatedAt = DateTime.Now;
