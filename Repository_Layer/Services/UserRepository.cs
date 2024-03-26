@@ -1,4 +1,5 @@
 ﻿using Common_Layer.RequestModel;
+using Common_Layer.ResponseModel;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Repository_Layer.Context;
@@ -46,7 +47,7 @@ namespace Repository_Layer.Services
             }
         }
 
-        public string UserLogin(LoginModel model)
+        public UserLogin UserLogin(LoginModel model)
         {
 
             var user = context.UserTable.FirstOrDefault(a => a.Email == model.Email);
@@ -55,10 +56,10 @@ namespace Repository_Layer.Services
                 if (BCrypt.Net.BCrypt.Verify(model.Password, user.Password))
                 {
                     string token = GenerateToken(user.Email, user.UserId);
-                    return {
-                        token: token,
-                        FName: user.FName,
-                        Role: user.Role
+                    return new UserLogin{
+                        Token= token,
+                        FName= user.FName,
+                        Role= user.Role
                     };
                 }
                 else
@@ -72,7 +73,7 @@ namespace Repository_Layer.Services
             }
         }
 
-        public string GenerateToken(string Email, int UserId)
+        private string GenerateToken(string Email, int UserId)
         {
             //Defining a Security Key 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));

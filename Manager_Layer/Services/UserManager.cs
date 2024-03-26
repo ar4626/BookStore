@@ -1,4 +1,5 @@
 ﻿using Common_Layer.RequestModel;
+using Common_Layer.ResponseModel;
 using Manager_Layer.Interface;
 using Repository_Layer.Entity;
 using Repository_Layer.Interface;
@@ -21,6 +22,11 @@ namespace Manager_Layer.Services
         {
             return repository.userRegistration(model);
         }
+        public UserLogin UserLogin(LoginModel model)
+        {
+            return repository.UserLogin(model);
+        }
+
 
     }
 }

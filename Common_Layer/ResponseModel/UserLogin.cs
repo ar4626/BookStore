@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Common_Layer.ResponseModel
 {
-    internal class UserLogin
+    public class UserLogin
     {
+        public string Token { get; set; }
+        public string FName { get; set; }
+        public string Role { get; set; }
     }
 }
