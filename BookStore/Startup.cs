@@ -1,3 +1,5 @@
+using Manager_Layer.Interface;
+using Manager_Layer.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Repository_Layer.Context;
+using Repository_Layer.Interface;
+using Repository_Layer.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +35,10 @@ namespace BookStore
 
             services.AddDbContext<BookStoreContext>(x => x.UseSqlServer(Configuration.GetConnectionString("dbConnection")));
 
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUserManager, UserManager>();
+
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +48,14 @@ namespace BookStore
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //Swagger 
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Employee API V1");
+            });
 
             app.UseHttpsRedirection();
 
