@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Zak4nuNOJVXjv5pGw4HK3HtHYNFLWbwh3JqCyY4R0wgTnkww0/LMKGdDv2L6RKOBRY2UpDXIDIQJhssU7OljMA==",
+  "dgSpecHash": "G0ZkSZLY00N+x5XCbniLoUZsGN3MKE6Fr/RdT9DneIXJiVYcEDsnwFFPEgikqEqCvEy7hV7MGUdeN7Q7khC0Og==",
   "success": true,
   "projectFilePath": "F:\\LOCOBUZZ\\BookStoreApp\\BookStore\\Manager_Layer\\Manager_Layer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Ankit\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Ankit\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\Ankit\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\Ankit\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
