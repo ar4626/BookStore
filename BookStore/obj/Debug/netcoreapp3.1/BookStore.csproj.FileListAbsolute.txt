@@ -56,3 +56,11 @@ F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Swashbuckle
 F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\obj\Debug\netcoreapp3.1\BookStore.MvcApplicationPartsAssemblyInfo.cs
 F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
