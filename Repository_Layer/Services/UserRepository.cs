@@ -98,6 +98,37 @@ namespace Repository_Layer.Services
 
         }
 
+        public ForgetPasswordModel ForgetPassword(string Email)
+        {
+            UserEntity User = context.UserTable.FirstOrDefault(x => x.Email == Email);
+            ForgetPasswordModel forgetPassword = new ForgetPasswordModel();
+            forgetPassword.Email = User.Email;
+            forgetPassword.UserId = User.UserId;
+            forgetPassword.Token = GenerateToken(Email, User.UserId);
+            return forgetPassword;
+        }
+
+        public bool CheckUser(string Email)
+        {
+            if (context.UserTable.FirstOrDefault(a => a.Email == Email) == null) return false;
+            return true;
+        }
+
+        public bool ResetPassword(string Email, ResetModel model)
+        {
+            UserEntity user = context.UserTable.ToList().Find(x => x.Email == Email);
+
+            if (CheckUser(user.Email))
+            {
+                user.Password = BCrypt.Net.BCrypt.HashPassword(model.NewPassword);
+                context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
 }
