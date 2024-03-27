@@ -1,0 +1,10 @@
+F:\LOCOBUZZ\BookStoreApp\BookStore\Common_Layer\bin\Debug\netcoreapp3.1\Common_Layer.deps.json
+F:\LOCOBUZZ\BookStoreApp\BookStore\Common_Layer\bin\Debug\netcoreapp3.1\Common_Layer.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\Common_Layer\bin\Debug\netcoreapp3.1\Common_Layer.pdb
+F:\LOCOBUZZ\BookStoreApp\BookStore\Common_Layer\obj\Debug\netcoreapp3.1\Common_Layer.GeneratedMSBuildEditorConfig.editorconfig
+F:\LOCOBUZZ\BookStoreApp\BookStore\Common_Layer\obj\Debug\netcoreapp3.1\Common_Layer.AssemblyInfoInputs.cache
+F:\LOCOBUZZ\BookStoreApp\BookStore\Common_Layer\obj\Debug\netcoreapp3.1\Common_Layer.AssemblyInfo.cs
+F:\LOCOBUZZ\BookStoreApp\BookStore\Common_Layer\obj\Debug\netcoreapp3.1\Common_Layer.csproj.CoreCompileInputs.cache
+F:\LOCOBUZZ\BookStoreApp\BookStore\Common_Layer\obj\Debug\netcoreapp3.1\Common_Layer.sourcelink.json
+F:\LOCOBUZZ\BookStoreApp\BookStore\Common_Layer\obj\Debug\netcoreapp3.1\Common_Layer.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\Common_Layer\obj\Debug\netcoreapp3.1\Common_Layer.pdb

@@ -1,0 +1,14 @@
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\bin\Debug\netcoreapp3.1\Repository_Layer.deps.json
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\bin\Debug\netcoreapp3.1\Repository_Layer.runtimeconfig.json
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\bin\Debug\netcoreapp3.1\Repository_Layer.runtimeconfig.dev.json
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\bin\Debug\netcoreapp3.1\Repository_Layer.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\bin\Debug\netcoreapp3.1\Repository_Layer.pdb
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\obj\Debug\netcoreapp3.1\Repository_Layer.csproj.AssemblyReference.cache
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\obj\Debug\netcoreapp3.1\Repository_Layer.GeneratedMSBuildEditorConfig.editorconfig
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\obj\Debug\netcoreapp3.1\Repository_Layer.AssemblyInfoInputs.cache
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\obj\Debug\netcoreapp3.1\Repository_Layer.AssemblyInfo.cs
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\obj\Debug\netcoreapp3.1\Repository_Layer.csproj.CoreCompileInputs.cache
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\obj\Debug\netcoreapp3.1\Repository_Layer.sourcelink.json
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\obj\Debug\netcoreapp3.1\Repository_Layer.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\obj\Debug\netcoreapp3.1\Repository_Layer.pdb
+F:\LOCOBUZZ\BookStoreApp\BookStore\Repository_Layer\obj\Debug\netcoreapp3.1\Repository_Layer.genruntimeconfig.cache
