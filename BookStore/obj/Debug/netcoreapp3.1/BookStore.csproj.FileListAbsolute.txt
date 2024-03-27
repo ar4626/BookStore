@@ -64,3 +64,13 @@ F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Microsoft.I
 F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Automatonymous.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\GreenPipes.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\MassTransit.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\MassTransit.AspNetCoreIntegration.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\MassTransit.RabbitMqTransport.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\NewId.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
