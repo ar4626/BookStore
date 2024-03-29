@@ -1,5 +1,6 @@
 ﻿using Repository_Layer.Context;
 using Repository_Layer.Entity;
+using Repository_Layer.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace Repository_Layer.Services
 {
-    public class CartRepository
+    public class CartRepository : ICartRepository
     {
         private readonly BookStoreContext context;
 
