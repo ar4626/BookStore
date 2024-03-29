@@ -1,6 +1,7 @@
 ﻿using Common_Layer.RequestModel;
 using Repository_Layer.Context;
 using Repository_Layer.Entity;
+using Repository_Layer.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace Repository_Layer.Services
 {
-    public class AddressRepository
+    public class AddressRepository : IAddressRepository
     {
         private readonly BookStoreContext context;
 
