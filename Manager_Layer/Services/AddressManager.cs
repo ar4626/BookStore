@@ -29,9 +29,9 @@ namespace Manager_Layer.Services
         {
             return repository.GetAllAddresses(userId);
         }
-        public bool DeleteAddress(int AddressId)
+        public bool DeleteAddress(int AddressId, int userId)
         {
-            return repository.DeleteAddress(AddressId);
+            return repository.DeleteAddress(AddressId, userId);
         }
 
 

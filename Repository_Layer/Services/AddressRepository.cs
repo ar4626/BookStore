@@ -62,9 +62,9 @@ namespace Repository_Layer.Services
             return context.AddressTable.Where(a=>a.UserId == userId).ToList();  
         }
 
-        public bool DeleteAddress(int AddressId)
+        public bool DeleteAddress(int AddressId, int userId)
         {
-            var address = context.AddressTable.FirstOrDefault(a=>a.AddressId==AddressId);
+            var address = context.AddressTable.FirstOrDefault(a=>a.AddressId==AddressId && a.UserId==userId );
             if(address != null)
             {
                 context.AddressTable.Remove(address);
