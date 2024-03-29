@@ -74,3 +74,4 @@ F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Microsoft.E
 F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\NewId.dll
 F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+F:\LOCOBUZZ\BookStoreApp\BookStore\BookStore\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
