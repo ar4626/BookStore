@@ -119,5 +119,29 @@ namespace BookStore.Controllers
             }
 
         }
+
+        [Authorize]
+        [HttpPut]
+        [Route("PlaceOrder")]
+        public ActionResult PlaceOrder()
+        {
+            try
+            {
+                int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+                var order = cartManager.PlaceOrder(userId);
+                if (order != null)
+                {
+                    return Ok(new ResModel<List<CartEntity>> { Success = true, Message = "Item Quantity Changed Successfully", Data = order });
+                }
+                else
+                {
+                    return BadRequest(new ResModel<List<CartEntity>> { Success = false, Message = "Something Went Wrong", Data = order });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResModel<bool> { Success = false, Message = ex.Message, Data = false });
+            }
+        }
     }
 }

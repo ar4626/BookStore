@@ -33,6 +33,10 @@ namespace Manager_Layer.Services
             return repository.UpdateQuantity(userId, bookId, quantity); 
         }
 
+        public List<CartEntity> PlaceOrder(int userId)
+        {
+            return repository.PlaceOrder(userId);
+        }
 
 
 

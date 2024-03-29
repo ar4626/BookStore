@@ -24,13 +24,20 @@ namespace Repository_Layer.Services
             {
                 CartEntity cart = new CartEntity();
                 var book = context.BookTable.FirstOrDefault(b=>b.BookId==bookId);
-                cart.UserId = userId;
-                cart.BookId = bookId;
-                cart.Quantity = 1;
-                cart.Price = cart.Quantity * book.Discount;
-                context.CartTable.Add(cart);
-                context.SaveChanges();
-                return cart;
+                if (book.Quantity >= 1)
+                {
+                    cart.UserId = userId;
+                    cart.BookId = bookId;
+                    cart.Quantity = 1;
+                    cart.Price = cart.Quantity * book.Discount;
+                    context.CartTable.Add(cart);
+                    context.SaveChanges();
+                    return cart;
+                }
+                else
+                {
+                    throw new Exception("Book Stock Out");
+                }
             }
             else
             {
@@ -55,7 +62,7 @@ namespace Repository_Layer.Services
 
         public List<CartEntity> GetAllCartItem(int userId)
         {
-            List<CartEntity> items = context.CartTable.Where(a=>a.UserId==userId).ToList();
+            List<CartEntity> items = context.CartTable.Where(a=>a.UserId==userId && a.IsOrdered==false).ToList();
             return items;
         }
 
@@ -64,14 +71,35 @@ namespace Repository_Layer.Services
             var cartItem = context.CartTable.FirstOrDefault(a => a.UserId == userId && a.BookId == bookId);
             if (cartItem != null)
             {
-                cartItem.Quantity = quantity;
-                context.SaveChanges();
-                return cartItem.Quantity;
+                var book = context.BookTable.FirstOrDefault(b => b.BookId == bookId);
+                if(book.Quantity>=quantity)
+                {
+                    cartItem.Quantity = quantity;
+                    context.SaveChanges();
+                    return cartItem.Quantity;
+                }
+                else
+                {
+                    throw new Exception("Book Stock Out");
+                }
             }
             else
             {
                 throw new Exception("Cart item Invalid");
             }
+        }
+
+        public List<CartEntity> PlaceOrder(int userId)
+        {
+            var cartItems = context.CartTable.Where(a=>a.UserId == userId && a.IsOrdered==false).ToList();
+            foreach(var cartItem in cartItems)
+            {
+                var book = context.BookTable.FirstOrDefault(b => b.BookId == cartItem.BookId);
+                book.Quantity = book.Quantity-cartItem.Quantity;
+                cartItem.IsOrdered = true;
+                context.SaveChanges();
+            }
+            return cartItems;
         }
     }
 }
