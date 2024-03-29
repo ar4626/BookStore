@@ -30,7 +30,7 @@ namespace BookStore.Controllers
             try
             {
                 int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
-                var cart = cartManager.AddBookToCart(userId,bookId);
+                var cart = cartManager.AddBookToCart(userId, bookId);
                 if (cart != null)
                 {
                     return Ok(new ResModel<CartEntity> { Success = true, Message = "Book Added To Cart Successfully", Data = cart });
@@ -40,7 +40,7 @@ namespace BookStore.Controllers
                     return BadRequest(new ResModel<CartEntity> { Success = false, Message = "Something Went Wrong", Data = null });
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 return BadRequest(new ResModel<bool> { Success = false, Message = ex.Message, Data = false });
             }
@@ -48,7 +48,7 @@ namespace BookStore.Controllers
 
         [Authorize]
         [HttpGet]
-        [Route("GetAllCartItems")]
+        [Route("GetCartItems")]
         public ActionResult GetAllItem()
         {
             try
@@ -64,7 +64,7 @@ namespace BookStore.Controllers
                     return BadRequest(new ResModel<List<CartEntity>> { Success = false, Message = "Something Went Wrong", Data = null });
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(new ResModel<bool> { Success = false, Message = ex.Message, Data = false });
             }
@@ -72,8 +72,8 @@ namespace BookStore.Controllers
 
         [Authorize]
         [HttpDelete]
-        [Route("RemoveCartItem")]
-        public ActionResult RemoveItem(int cartId)
+        [Route("DeleteCartItem")]
+        public ActionResult DeleteItem(int cartId)
         {
             try
             {
@@ -118,6 +118,30 @@ namespace BookStore.Controllers
                 return BadRequest(new ResModel<bool> { Success = false, Message = ex.Message, Data = false });
             }
 
+        }
+
+        [Authorize]
+        [HttpPut]
+        [Route("PlaceOrder")]
+        public ActionResult PlaceOrder()
+        {
+            try
+            {
+                int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+                var order = cartManager.PlaceOrder(userId);
+                if (order != null)
+                {
+                    return Ok(new ResModel<List<CartEntity>> { Success = true, Message = "Item Quantity Changed Successfully", Data = order });
+                }
+                else
+                {
+                    return BadRequest(new ResModel<List<CartEntity>> { Success = false, Message = "Something Went Wrong", Data = order });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResModel<bool> { Success = false, Message = ex.Message, Data = false });
+            }
         }
     }
 }
