@@ -42,6 +42,8 @@ namespace BookStore
 
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUserManager, UserManager>();
+            services.AddTransient<IBookRepository, BookRepository>();
+            services.AddTransient<IBookManager, BookManager>();
 
 
             //RabbitMQ
