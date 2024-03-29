@@ -72,8 +72,8 @@ namespace BookStore.Controllers
 
         [Authorize]
         [HttpDelete]
-        [Route("DeleteCartItem")]
-        public ActionResult DeleteItem(int cartId)
+        [Route("RemoveCartItem")]
+        public ActionResult RemoveItem(int cartId)
         {
             try
             {

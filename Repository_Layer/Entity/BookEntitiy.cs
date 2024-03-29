@@ -29,7 +29,5 @@ namespace Repository_Layer.Entity
         [JsonIgnore]
         public virtual UserEntity BookBy { get; set; }
 
-
-
     }
 }
