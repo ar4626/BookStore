@@ -99,5 +99,39 @@ namespace Repository_Layer.Services
             return list;
         }
 
+        public BookEntitiy UpdateBookQuantity(int userId, int bookId, int quantity)
+        {
+            var books = context.BookTable.Where(a => a.UserId == userId);
+            if(books.Any())
+            {
+                var book = books.FirstOrDefault(b=>b.BookId== bookId);
+                if(book != null)
+                {
+                    book.Quantity = quantity;
+                    context.SaveChanges();
+                    return book;
+                }
+                throw new Exception("Book Id is Invalid");
+            }
+            throw new Exception("User doesn't exist");
+        }
+
+        public BookEntitiy UpdateBookPrice(int userId, int bookId, int price)
+        {
+            var books = context.BookTable.Where(a => a.UserId == userId);
+            if (books.Any())
+            {
+                var book = books.FirstOrDefault(b => b.BookId == bookId);
+                if (book != null)
+                {
+                    book.Amount = price;
+                    context.SaveChanges();
+                    return book;
+                }
+                throw new Exception("Book Id is Invalid");
+            }
+            throw new Exception("User doesn't exist");
+        }
+
     }
 }
