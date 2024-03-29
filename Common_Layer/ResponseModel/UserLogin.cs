@@ -8,6 +8,5 @@ namespace Common_Layer.ResponseModel
     {
         public string Token { get; set; }
         public string FName { get; set; }
-        public string Role { get; set; }
     }
 }
