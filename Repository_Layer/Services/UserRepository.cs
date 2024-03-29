@@ -55,11 +55,10 @@ namespace Repository_Layer.Services
             {
                 if (BCrypt.Net.BCrypt.Verify(model.Password, user.Password))
                 {
-                    string token = GenerateToken(user.Email, user.UserId);
+                    string token = GenerateToken(user.Email, user.UserId, user.Role);
                     return new UserLogin{
                         Token= token,
                         FName= user.FName,
-                        Role= user.Role
                     };
                 }
                 else
@@ -73,7 +72,7 @@ namespace Repository_Layer.Services
             }
         }
 
-        private string GenerateToken(string Email, int UserId)
+        private string GenerateToken(string Email, int UserId, string Role)
         {
             //Defining a Security Key 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
@@ -81,6 +80,7 @@ namespace Repository_Layer.Services
             var claims = new[]
             {
                 new Claim("Email",Email),
+                new Claim("Role",Role),
                 new Claim("UserId", UserId.ToString())
             };
             var token = new JwtSecurityToken(
@@ -104,7 +104,7 @@ namespace Repository_Layer.Services
             ForgetPasswordModel forgetPassword = new ForgetPasswordModel();
             forgetPassword.Email = User.Email;
             forgetPassword.UserId = User.UserId;
-            forgetPassword.Token = GenerateToken(Email, User.UserId);
+            forgetPassword.Token = GenerateToken(Email, User.UserId, User.Role);
             return forgetPassword;
         }
 
