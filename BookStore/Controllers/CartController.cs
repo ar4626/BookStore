@@ -48,7 +48,7 @@ namespace BookStore.Controllers
 
         [Authorize]
         [HttpGet]
-        [Route("GetCartItems")]
+        [Route("GetAllCartItems")]
         public ActionResult GetAllItem()
         {
             try
