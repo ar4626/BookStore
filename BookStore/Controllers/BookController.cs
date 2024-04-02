@@ -75,6 +75,28 @@ namespace BookStore.Controllers
                 return BadRequest(new ResModel<List<BookEntitiy>> { Success = false, Message = ex.Message, Data = null });
             }
         }
+        
+        [HttpGet]
+        [Route("GetABook")]
+        public ActionResult GetABook(int id)
+        {
+            try
+            {
+                var book = bookManager.GetBookById(id);
+                if(book != null)
+                {
+                    return Ok(new ResModel<BookEntitiy> { Success = true, Message = "Book Fetched Successfully", Data = book });
+                }
+                else
+                {
+                    return BadRequest(new ResModel<BookEntitiy> { Success = false, Message = "Something Went Wrong", Data = null });
+                }
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(new ResModel<List<BookEntitiy>> { Success = false, Message = ex.Message, Data = null });
+            }
+        }
 
         [Authorize]
         [HttpPut]

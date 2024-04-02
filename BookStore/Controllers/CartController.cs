@@ -55,13 +55,13 @@ namespace BookStore.Controllers
             {
                 int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
                 List<CartEntity> cartItems = cartManager.GetAllCartItem(userId);
-                if (cartItems != null)
+                if (cartItems.Count>0)
                 {
                     return Ok(new ResModel<List<CartEntity>> { Success = true, Message = "Cart Fetched Successfully", Data = cartItems });
                 }
                 else
                 {
-                    return BadRequest(new ResModel<List<CartEntity>> { Success = false, Message = "Something Went Wrong", Data = null });
+                    return BadRequest(new ResModel<List<CartEntity>> { Success = false, Message = "Cart Empty", Data = null });
                 }
             }
             catch (Exception ex)

@@ -13,7 +13,7 @@ namespace Common_Layer.Utility
             string FromEmail = "ar2646@srmist.edu.in";
             MailMessage Message = new MailMessage(FromEmail, ToEmail);
             //string MailBody = "Token Generated : " + Token;
-            string MailBody = $"FundooNotes Reset Password : <a href=http://localhost:4200/reset/{Token}> Click Me </a>";
+            string MailBody = $"FundooNotes Reset Password : <a href=http://localhost:4200/reset-password/{Token}> Click Me </a>";
             Message.Subject = "FundoNotes Rest Password Link";
             Message.Body = MailBody.ToString();
             Message.BodyEncoding = Encoding.UTF8;

@@ -101,5 +101,11 @@ namespace Repository_Layer.Services
             }
             return cartItems;
         }
+
+        public int GetCartCount(int userId)
+        {
+            var cartItems = context.CartTable.Where(a=>a.UserId == userId).ToList();
+            return cartItems.Count;
+        }
     }
 }
