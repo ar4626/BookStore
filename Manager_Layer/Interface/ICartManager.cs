@@ -12,6 +12,8 @@ namespace Manager_Layer.Interface
         public List<CartEntity> GetAllCartItem(int userId);
         public int UpdateQuantity(int userId, int bookId, int quantity);
         public List<CartEntity> PlaceOrder(int userId);
+        public int GetCartCount(int userId);
+
 
     }
 }

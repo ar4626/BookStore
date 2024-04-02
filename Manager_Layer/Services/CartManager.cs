@@ -37,6 +37,10 @@ namespace Manager_Layer.Services
         {
             return repository.PlaceOrder(userId);   
         }
+        public int GetCartCount(int userId)
+        {
+            return repository.GetCartCount(userId);
+        }
 
 
 

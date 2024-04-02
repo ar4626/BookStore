@@ -143,5 +143,29 @@ namespace BookStore.Controllers
                 return BadRequest(new ResModel<bool> { Success = false, Message = ex.Message, Data = false });
             }
         }
+
+        [Authorize]
+        [HttpGet]
+        [Route("PlaceOrder")]
+        public ActionResult GetCartCount()
+        {
+            try
+            {
+                int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+                var count = cartManager.GetCartCount(userId);
+                if (count>=0)
+                {
+                    return Ok(new ResModel<int> { Success = true, Message = "Count Fetched Successfully", Data = count });
+                }
+                else
+                {
+                    return BadRequest(new ResModel<int> { Success = false, Message = "Something Went Wrong", Data = count });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResModel<bool> { Success = false, Message = ex.Message, Data = false });
+            }
+        }
     }
 }
