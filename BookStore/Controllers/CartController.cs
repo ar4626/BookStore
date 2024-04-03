@@ -176,14 +176,14 @@ namespace BookStore.Controllers
             try
             {
                 int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
-                bool count = cartManager.BookInCart(userId,bookId);
-                if (count==true)
+                CartEntity count = cartManager.BookInCart(userId,bookId);
+                if (count!=null)
                 {
-                    return Ok(new ResModel<bool> { Success = true, Message = "Book Already Present", Data = count });
+                    return Ok(new ResModel<CartEntity> { Success = true, Message = "Book Already Present", Data = count });
                 }
                 else
                 {
-                    return BadRequest(new ResModel<bool> { Success = false, Message = "Something Went Wrong", Data = count });
+                    return BadRequest(new ResModel<CartEntity> { Success = false, Message = "Something Went Wrong", Data = count });
                 }
             }
             catch (Exception ex)

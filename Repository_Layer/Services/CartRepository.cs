@@ -109,16 +109,16 @@ namespace Repository_Layer.Services
             return cartItems.Count;
         }
 
-        public bool BookInCart(int userId, int BookId)
+        public CartEntity BookInCart(int userId, int BookId)
         {
             var cartItem = context.CartTable.FirstOrDefault(a=>a.UserId==userId&& a.BookId==BookId && a.IsOrdered==false);
-            if(cartItem == null)
+            if(cartItem != null)
             {
-                return false;
+                return cartItem;
             }
             else
             {
-                return true;
+                return cartItem;
             }
         }
     }
