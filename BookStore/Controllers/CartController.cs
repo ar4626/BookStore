@@ -146,7 +146,7 @@ namespace BookStore.Controllers
 
         [Authorize]
         [HttpGet]
-        [Route("PlaceOrder")]
+        [Route("GetCartCount")]
         public ActionResult GetCartCount()
         {
             try
@@ -160,6 +160,30 @@ namespace BookStore.Controllers
                 else
                 {
                     return BadRequest(new ResModel<int> { Success = false, Message = "Something Went Wrong", Data = count });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResModel<bool> { Success = false, Message = ex.Message, Data = false });
+            }
+        }
+        
+        [Authorize]
+        [HttpGet]
+        [Route("CheckBookInCart")]
+        public ActionResult CheckBookInCart(int bookId)
+        {
+            try
+            {
+                int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+                bool count = cartManager.BookInCart(userId,bookId);
+                if (count==true)
+                {
+                    return Ok(new ResModel<bool> { Success = true, Message = "Book Already Present", Data = count });
+                }
+                else
+                {
+                    return BadRequest(new ResModel<bool> { Success = false, Message = "Something Went Wrong", Data = count });
                 }
             }
             catch (Exception ex)

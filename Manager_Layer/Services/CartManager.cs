@@ -41,6 +41,11 @@ namespace Manager_Layer.Services
         {
             return repository.GetCartCount(userId);
         }
+        public bool BookInCart(int userId, int BookId)
+        {
+            return (repository.BookInCart(userId, BookId));
+        }
+
 
 
 

@@ -13,6 +13,7 @@ namespace Manager_Layer.Interface
         public int UpdateQuantity(int userId, int bookId, int quantity);
         public List<CartEntity> PlaceOrder(int userId);
         public int GetCartCount(int userId);
+        public bool BookInCart(int userId, int BookId);
 
 
     }

@@ -75,6 +75,7 @@ namespace Repository_Layer.Services
                 if (book.Quantity >= quantity)
                 {
                     cartItem.Quantity = quantity;
+                    cartItem.Price = quantity * book.Discount;
                     context.SaveChanges();
                     return cartItem.Quantity;
                 }
@@ -104,8 +105,21 @@ namespace Repository_Layer.Services
 
         public int GetCartCount(int userId)
         {
-            var cartItems = context.CartTable.Where(a=>a.UserId == userId).ToList();
+            var cartItems = context.CartTable.Where(a=>a.UserId == userId && a.IsOrdered==false).ToList();
             return cartItems.Count;
+        }
+
+        public bool BookInCart(int userId, int BookId)
+        {
+            var cartItem = context.CartTable.FirstOrDefault(a=>a.UserId==userId&& a.BookId==BookId && a.IsOrdered==false);
+            if(cartItem == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
